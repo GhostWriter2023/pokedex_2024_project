@@ -1,0 +1,28 @@
+body {
+	font-family: 'Noto Sans', sans-serif;
+	background: #e65df3;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Roboto Mono', monospace;
+}
+
+.container {
+	max-width: 840px;
+	margin: 0 auto;
+}
+
+.container > div {
+	margin: 20px auto;
+}
+
+.intro {
+	text-align: center;
+}
+
+.pokemon-logo {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	box-shadow: 0 4px 6px 0 rgb(34, 60, 80, 0.16);
+} /* this entry displays the profile picture in a circle */
