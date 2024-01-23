@@ -26,3 +26,22 @@ h1, h2, h3, h4 {
 	height: 150px;
 	box-shadow: 0 4px 6px 0 rgb(34, 60, 80, 0.16);
 } /* this entry displays the profile picture in a circle */
+
+.button-class {
+	background-color: black;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	width: 150px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+  }
