@@ -164,12 +164,15 @@ let pokemonRepository = (function () {
         });
     }
 
-    function showDetails(item) {
-        pokemonRepository.loadDetails(item).then(function () {
+    async function showDetails(item) {
+        try {
+            await pokemonRepository.loadDetails(item);
             const formattedHeight = (item.height / 10).toFixed(1);
-            const formattedWeight = (item.weight / 10).toFixed(1); // height and weight were missing a decimal point e.g. was displaying 69 instead of 6.9
+            const formattedWeight = (item.weight / 10).toFixed(1);
             showModal(item.name, `Height: ${formattedHeight} m and Weight: ${formattedWeight} kg`, item.imageUrl);
-        });
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     return {
