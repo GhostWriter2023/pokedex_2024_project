@@ -1,5 +1,15 @@
 const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=950';
 
+// Scroll down button
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("myBtn").style.display = "block";
+  // When the user clicks on the button, scroll to the top of the document
+  document.getElementById("myBtn").addEventListener("click", function () {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+  });
+});
+
 // Function to fetch Pokémon data from the API
 async function fetchPokemonData() {
   try {
@@ -46,32 +56,19 @@ async function fetchFullPokemonData(pokemonUrl) {
 
 // Function to open Pokémon modal
 function openPokemonModal(pokemon) {
-  const modalContainer = document.getElementById('modal-container');
-
-  // Create modal content
-  const modalContent = `
-    <div class="modal fade" id="pokemonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">${pokemon.name}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Type: ${pokemon.types.map((type) => type.type.name).join(', ')}</p>
-            </div>
-        </div>
-      </div>
-    </div>
-  `;
-
-  // Inject modal content into the modal container
-  modalContainer.innerHTML = modalContent;
+  // Update the modal title and content using jQuery
+  $('#exampleModalLabel').text(pokemon.name);
+  $('.modal-body').html(`
+  <h2> ${pokemon.name}</h2>
+  <p><strong>Height:</strong> ${pokemon.height}</p>
+  <p><strong>Weight:</strong> ${pokemon.weight}</p>
+  <p><strong>Type:</strong> ${pokemon.types.map((type) => type.type.name).join(', ')}</p>
+  <img src="${pokemon.sprites.front_default}" alt="Front View">
+  <img src="${pokemon.sprites.back_default}" alt="Back View">
+  `);
 
   // Show the modal
-  $('#pokemonModal').modal('show');
+  $('#exampleModal').modal('show');
 }
 
 // Call the function to populate the Pokémon list with customized Bootstrap buttons
