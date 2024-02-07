@@ -10,6 +10,58 @@ h4 {
 	font-family: 'Roboto Mono', monospace;
 }
 
+/* Media query for screens smaller than 576px (e.g., iPhone SE) */
+@media (max-width: 575.98px) {
+
+	/* Adjust Navbar for smaller screens */
+	.navbar {
+		padding: 8px;
+	}
+
+	.navbar-brand {
+		font-size: 16px;
+	}
+
+	.nav-link {
+		font-size: 12px;
+	}
+
+	/* Adjust Clear Search button for smaller screens */
+	#clearSearchButton {
+		padding: 5px 10px;
+		font-size: 12px;
+	}
+
+	/* Adjust Return to Top button for smaller screens */
+	#myBtn {
+		padding: 5px 10px;
+		font-size: 12px;
+	}
+
+	/* Ensure header content fits well in smaller screens */
+	.header-content {
+		margin-top: 100px; /* Add margin to prevent Navbar from covering header content */
+	}
+
+	/* Reduce size of elements in header-content for smaller screens */
+	.header-content h1 {
+		font-size: 24px;
+	}
+
+	.header-content h3 {
+		font-size: 16px;
+	}
+
+	.header-content p {
+		font-size: 14px; 
+	}
+
+	.header-content img.pokemon-logo {
+		width: 80px; /* Reduce width of image for smaller screens */
+		height: auto; /* Maintain aspect ratio */
+	}
+}
+
 /* Custom CSS to make the Navbar and button fixed */
 .navbar-fixed {
 	position: fixed;
@@ -18,12 +70,42 @@ h4 {
 	z-index: 1000;
 }
 
-/* Rtn to Top button style */
+/* Center the search box */
+.navbar .mx-auto {
+	display: flex;
+	justify-content: center;
+}
+
+/* Style for the "Clear Search" button */
+#clearSearchButton {
+	background-color: white;
+	color: #f44336;
+	border-color: #f44336;
+	cursor: pointer;
+}
+
+#clearSearchButton:hover {
+	background-color: #f44336;
+	color: white;
+}
+
+/* "Rtn to Top" button style */
 #myBtn {
 	position: fixed;
 	top: 12px;
 	right: 20px;
 	display: on;
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+#myBtn:hover {
+	background-color: black;
+	color: white;
 }
 
 .header-content {
@@ -37,13 +119,13 @@ h4 {
 	text-align: center;
 }
 
+/* To displays the profile picture in a circle */
 .pokemon-logo {
 	border-radius: 50%;
 	width: 150px;
 	height: 150px;
 	box-shadow: 0 4px 6px 0 rgb(34, 60, 80, 0.16);
 }
-/* above entry displays the profile picture in a circle */
 
 .container {
 	max-width: 840px;
@@ -55,26 +137,6 @@ h4 {
 }
 
 .custom-button {
-	background-color: black;
-	border: none;
-	color: white;
-	padding: 16px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	width: 150px;
-	-webkit-transition-duration: 0.4s;
-	/* Safari */
-	transition-duration: 0.4s;
-	cursor: pointer;
-	background-color: white;
-	color: black;
-	border: 2px solid black;
-}
-
-.button-class {
 	background-color: black;
 	border: none;
 	color: white;

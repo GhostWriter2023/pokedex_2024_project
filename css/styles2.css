@@ -1,0 +1,95 @@
+body {
+	font-family: 'Noto Sans', sans-serif;
+	background: #e65df3;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Roboto Mono', monospace;
+}
+
+/* Custom CSS to make the Navbar and button fixed */
+.navbar-fixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+/* Rtn to Top button style */
+#myBtn {
+	position: fixed;
+	top: 12px;
+	right: 20px;
+	display: on;
+}
+
+.header-content {
+	max-width: 840px;
+	margin: 0 auto;
+	margin-top: 76px;
+	/* Adjust the value based on the height of your Navbar */
+}
+
+.intro {
+	text-align: center;
+}
+
+.pokemon-logo {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	box-shadow: 0 4px 6px 0 rgb(34, 60, 80, 0.16);
+}
+/* above entry displays the profile picture in a circle */
+
+.container {
+	max-width: 840px;
+	margin: 0 auto;
+}
+
+.container>div {
+	margin: 20px auto;
+}
+
+.custom-button {
+	background-color: black;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	width: 150px;
+	-webkit-transition-duration: 0.4s;
+	/* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+}
+
+.button-class {
+	background-color: black;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	width: 150px;
+	-webkit-transition-duration: 0.4s;
+	/* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+}
