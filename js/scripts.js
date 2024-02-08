@@ -3,8 +3,7 @@ const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=950';
 // Scroll down button
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("myBtn").style.display = "block";
-  // When the user clicks on the button, scroll to the top of the document
-  document.getElementById("myBtn").addEventListener("click", function () {
+  document.getElementById("myBtn").addEventListener("click", function () { // When the user clicks on the button, scroll to the top of the document
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
   });
@@ -26,25 +25,20 @@ async function fetchPokemonData() {
 async function populatePokemonList() {
   const pokemonListContainer = document.querySelector('.pokemon-list');
   const pokemonData = await fetchPokemonData();
-
-  // Divide the number of Pokémon buttons by 4 to determine the number of buttons per column
-  const buttonsPerColumn = Math.ceil(pokemonData.length / 4);
+  const buttonsPerColumn = Math.ceil(pokemonData.length / 4); // Divide the number of Pokémon buttons by 4 to determine the number of buttons per column
 
   let columnDivs = []; // Array to hold column div elements
 
   for (let i = 0; i < 4; i++) {
-    // Create a column div for each column
-    const columnDiv = document.createElement('div');
+    const columnDiv = document.createElement('div'); // Create a column div for each column
     columnDiv.className = 'col'; // Use Bootstrap column class
     columnDivs.push(columnDiv); // Add column div to the array
   }
 
   pokemonData.forEach((pokemon, index) => {
     let primaryName = pokemon.name; // Default to the original name
-    // Check if the name contains a hyphen and is not "Ho-Oh"
-    if (pokemon.name.includes('-') && pokemon.name.toLowerCase() !== 'ho-oh') {
-      // Split the name by hyphen and take the first part
-      primaryName = pokemon.name.split('-')[0];
+    if (pokemon.name.includes('-') && pokemon.name.toLowerCase() !== 'ho-oh') { // Check if the name contains a hyphen and is not "Ho-Oh"
+      primaryName = pokemon.name.split('-')[0]; // Split the name by hyphen and take the first part
     }
     // Capitalize the primary name
     const capitalizedPokemonName = primaryName.charAt(0).toUpperCase() + primaryName.slice(1);
@@ -63,20 +57,16 @@ async function populatePokemonList() {
     columnDivs[columnDivIndex].appendChild(button);
   });
 
-  // Create a row div to contain all the column divs
-  const rowDiv = document.createElement('div');
+    const rowDiv = document.createElement('div'); // Create a row div to contain all the column divs
   rowDiv.className = 'row'; // Use Bootstrap row class
-  // Append each column div to the row div
-  columnDivs.forEach((columnDiv) => {
+  columnDivs.forEach((columnDiv) => { // Append each column div to the row div
     rowDiv.appendChild(columnDiv);
   });
 
-  // Append the row div to the Pokémon list container
-  pokemonListContainer.appendChild(rowDiv);
+  pokemonListContainer.appendChild(rowDiv); // Append the row div to the Pokémon list container
 }
 
-// Call the function to populate the Pokémon list with customized Bootstrap buttons
-populatePokemonList();
+populatePokemonList(); // Call the function to populate the Pokémon list with customized Bootstrap buttons
 
 // Function to handle search functionality
 function handleSearch() {
@@ -93,21 +83,14 @@ function handleSearch() {
     }
   });
 
-  /* After filtering, repopulate the Pokémon list to ensure buttons are displayed in 4 columns
-  populatePokemonList();*/
-  // Change the search button to clear search button
-  clearSearchButton.textContent = 'Clear Search';
+  clearSearchButton.textContent = 'Clear Search'; // Change the search button to clear search button
 }
 
-// Event listener for search input keyup event
-document.getElementById('searchInput').addEventListener('keyup', handleSearch);
+document.getElementById('searchInput').addEventListener('keyup', handleSearch); // Event listener for search input keyup event
 
-// Event listener for clear search button click
-document.getElementById('clearSearchButton').addEventListener('click', function () {
-  // Clear search input
-  document.getElementById('searchInput').value = '';
-  // Call handleSearch to reset the Pokémon list
-  handleSearch();
+document.getElementById('clearSearchButton').addEventListener('click', function () { // Event listener for clear search button click
+  document.getElementById('searchInput').value = '';  // Clear search input
+  handleSearch();  // Call handleSearch to reset the Pokémon list
 });
 
 // Function to fetch full Pokémon data
@@ -136,16 +119,14 @@ function openPokemonModal(pokemon) {
   <p><strong>Weight:</strong> ${weightInKilograms} kg</p>
   <p><strong>Type:</strong> ${pokemon.types.map((type) => type.type.name).join(', ')}</p>
   <img src="${pokemon.sprites.front_default}" alt="Front View">
-  <img src="${pokemon.sprites.back_default}" alt="Back View">
-  `);
+  ${pokemon.sprites.back_default ? `<img src="${pokemon.sprites.back_default}" alt="Back View">` : ''}
+`);
 
-  function changeModalWidth(newWidth) {
-    // Get the modal dialog element
-    const modalDialog = document.querySelector('.modal-dialog');
-    // Set the new width
-    modalDialog.style.maxWidth = newWidth; // You can set the width as pixels (e.g., '600px') or percentage (e.g., '80%')
-  }
-  changeModalWidth('275px');
-  // Show the modal
-  $('#exampleModal').modal('show');
+function changeModalWidth(newWidth) {
+  const modalDialog = document.querySelector('.modal-dialog'); // Get the modal dialog element
+  modalDialog.style.maxWidth = newWidth; // Set the new width
+}
+changeModalWidth('275px');
+
+$('#exampleModal').modal('show'); // Show the modal
 }
