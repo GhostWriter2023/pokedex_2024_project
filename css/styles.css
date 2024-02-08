@@ -10,10 +10,23 @@ h4 {
 	font-family: 'Roboto Mono', monospace;
 }
 
+/* Fix the position of the Navbar and its buttons */
+.navbar-fixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
 /* Media query for screens smaller than 576px (e.g., iPhone SE) */
 @media (max-width: 575.98px) {
 
-	/* Adjust Navbar for smaller screens */
+	.header-content {
+		padding-top: 100px;
+		/* Add padding to prevent Navbar from covering header content */
+	}
+
+	/* Adjust Navbar features for smaller screens */
 	.navbar {
 		padding: 8px;
 	}
@@ -40,7 +53,8 @@ h4 {
 
 	/* Ensure header content fits well in smaller screens */
 	.header-content {
-		margin-top: 100px; /* Add margin to prevent Navbar from covering header content */
+		margin-top: 130px;
+		/* Add margin to prevent Navbar from covering header content */
 	}
 
 	/* Reduce size of elements in header-content for smaller screens */
@@ -53,21 +67,15 @@ h4 {
 	}
 
 	.header-content p {
-		font-size: 14px; 
+		font-size: 14px;
 	}
 
 	.header-content img.pokemon-logo {
-		width: 80px; /* Reduce width of image for smaller screens */
-		height: auto; /* Maintain aspect ratio */
+		width: 80px;
+		/* Reduce width of image for smaller screens */
+		height: auto;
+		/* Maintain aspect ratio */
 	}
-}
-
-/* Custom CSS to make the Navbar and button fixed */
-.navbar-fixed {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 1000;
 }
 
 /* Center the search box */
