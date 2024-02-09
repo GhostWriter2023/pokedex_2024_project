@@ -21,6 +21,8 @@ Getting Started
         -Clone the repository.
         -Open the project in your preferred code editor.
         -Launch the "index.html" file in a web browser.
+    The application is accessibla as a GitHub Page at the following link:
+        https://ghostwriter2023.github.io/pokedex_2024_project/
 
 Feedback and Contributions
     Feedback and contributions are welcome. Feel free to submit issues or pull requests to enhance the project.
