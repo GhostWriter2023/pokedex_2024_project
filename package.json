@@ -1,0 +1,11 @@
+{
+  "name": "pokedex_2024_project",
+  "version": "1.0.0",
+  "description": "Objective     Build a small web application using HTML, CSS, and JavaScript that fetches data from an external API and provides a detailed view of the data points.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
